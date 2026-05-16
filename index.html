@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who is the "Average Australian"?</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="poster-canvas">
+        
+        <header class="poster-header">
+            <h1>Who is the</h1>
+            <h1>"Average Australian" ?</h1>
+            <div class="header-line"></div>
+            <p class="lead-text">
+                A visual journey through Australia's population growth, cultural diversity, and the migrant stories shaping our communities.
+            </p>
+        </header>
+
+        <div class="poster-divider"></div>
+
+        <article class="poster-row">
+            <div class="narrative-content">
+                <h2>1. Where We Live: Population Density</h2>
+                <p>
+                    Australia is one of the most urbanised countries globally, yet its vast interior remains incredibly sparse. This geographic map reveals how our population clusters tightly along the southeastern coastal fringe, driven by historical settlement hubs and climate suitability.
+                </p>
+            </div>
+            <div class="poster-chart-wrapper">
+                <div id="chart1" class="vis-container"></div>
+            </div>
+            <p class="chart-caption">💡 <em>Hint: Hover over the states to see exact population counts and densities.</em></p>
+        </article>
+
+        <div class="poster-divider"></div>
+
+        <article class="poster-row">
+            <div class="narrative-content">
+                <h2>2. Shifting Generations: Population Growth Trend</h2>
+                <p>
+                    To understand the trajectory of the "average Australian", we examine how the male and female population segments have expanded over the past four decades. This time-series line chart tracks the parallel growth of both genders, highlighting a steady and balanced upward climb heavily supported by steady net overseas migration.
+                </p>
+            </div>
+            <div class="poster-chart-wrapper">
+                <div id="chart2" class="vis-container"></div>
+            </div>
+            <p class="chart-caption">💡 <em>Figure 2: Multi-line chart illustrating Australia's continuous population trajectory from 1981 to 2024.</em></p>
+        </article>
+
+        <footer class="poster-footer">
+            <p><strong>Author:</strong> Guan-Fu (Daniel) Chen | <strong>Date:</strong> May 2026</p>
+            <p><strong>Data Sources:</strong> 
+                <a href="https://www.abs.gov.au/" target="_blank" rel="noopener noreferrer">Australian Bureau of Statistics (ABS)</a> | 
+                <a href="https://www.homeaffairs.gov.au/" target="_blank" rel="noopener noreferrer">Department of Home Affairs</a> |
+                <a href="https://ourworldindata.org/profile/population-demography/australia" target="_blank">Our World in Data</a>
+            </p>
+            
+        </footer>
+
+    </div>
+
+    <script type="text/javascript">
+        // 載入第一張動態年份地圖
+        vegaEmbed('#chart1', 'js/map_density.json').then(function(result) {
+            console.log("Map successfully loaded");
+        }).catch(console.error);
+
+        // 載入第二張男女歷史增長趨勢圖
+        vegaEmbed('#chart2', 'js/gender_trend.json').then(function(result) {
+            console.log("Gender trend chart successfully loaded");
+        }).catch(console.error);
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "data/abs_gender_pyramid.csv"
+    },
+    "vconcat": [
+        {
+        "title": {
+            "text": "Australia's Population Growth Trend (Focus View)",
+            "anchor": "start",
+            "fontSize": 14,
+            "fontWeight": "bold"
+        },
+        "width": "container",
+        "height": 250,
+        "mark": {
+            "type": "line",
+            "line": true,
+            "opacity": 0.75,
+            "point": {
+                "filled": true,
+                "size": 35
+            }
+        },
+        "encoding": {
+            "x": {
+            "field": "Year",
+            "type": "quantitative",
+            "title": null,
+            "scale": {
+                "domain": {
+                "param": "time_brush"
+                }
+            },
+            "axis": {
+                "format": "d",
+                "grid": true
+            }
+            },
+            "y": {
+            "field": "Population",
+            "type": "quantitative",
+            "title": "Population Count",
+            "axis": {
+                "format": "~s",
+                "grid": true
+            }
+            },
+            "color": {
+            "field": "Sex",
+            "type": "nominal",
+            "scale": {
+                "domain": ["Male", "Female"],
+                "range": ["#2980b9", "#e74c3c"]
+            },
+            "title": "Sex"
+            },
+            "tooltip": [
+            {"field": "Year", "type": "quantitative", "title": "Year"},
+            {"field": "Sex", "type": "nominal", "title": "Sex"},
+            {"field": "Population", "type": "quantitative", "format": ",", "title": "Population"}
+            ]
+        }
+        },
+        {
+        "title": {
+            "text": "Total Population Change (Context View - Drag & Brush on this Timeline)",
+            "anchor": "start",
+            "fontSize": 11,
+            "fontWeight": "normal",
+            "color": "#555"
+        },
+        "width": "container",
+        "height": 60,
+        "params": [
+            {
+            "name": "time_brush",
+            "select": {
+                "type": "interval",
+                "encodings": ["x"]
+            },
+            "value": {
+                "x": [1981, 2025]
+            }
+            }
+        ],
+        "mark": {
+            "type": "area",
+            "color": "#7f8c8d",
+            "opacity": 0.35
+        },
+        "encoding": {
+            "x": {
+            "field": "Year",
+            "type": "quantitative",
+            "scale": {
+                "domain": [1981, 2025]
+            },
+            "axis": {
+                "format": "d"
+            }
+            },
+            "y": {
+            "aggregate": "sum",
+            "field": "Population",
+            "type": "quantitative",
+            "title": "Total Pop",
+            "axis": {
+                "tickCount": 3,
+                "format": "~s"
+            }
+            }
+        }
+        }
+    ]
+}

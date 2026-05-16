@@ -1,0 +1,143 @@
+/* 全局海報背景 */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f6f8; /* 稍微深一點的底色，用來突顯白色的海報主體 */
+    margin: 0;
+    padding: 40px 0;
+    color: #2c3e50;
+    -webkit-font-smoothing: antialiased;
+}
+
+.poster-canvas {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 60px 50px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.poster-header {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.poster-header h1 {
+    font-size: 3em;
+    font-weight: 800;
+    color: #1a252f;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.poster-header h2 {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #7f8c8d;
+    margin: 0 0 25px 0;
+}
+
+.header-line {
+    width: 100px;
+    height: 4px;
+    background-color: #e67e22; /* 橘色點綴線，建立視覺焦點 */
+    margin: 0 auto 25px auto;
+}
+
+.lead-text {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #34495e;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.poster-row {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.narrative-content {
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    text-align: left;
+}
+
+.narrative-content h3 {
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-left: 4px solid #2c3e50;
+    padding-left: 12px;
+}
+
+.narrative-content p {
+    font-size: 1.05em;
+    line-height: 1.65;
+    color: #555555;
+}
+
+.poster-chart-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafbfc;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #edf1f5;
+    margin-bottom: 10px;
+}
+
+/* 圖表下方的圖說（Caption） */
+.chart-caption {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+/* 海報層與層之間的微弱分割線 */
+/*.poster-divider {
+    height: 1px;
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(224, 230, 237, 1), rgba(0,0,0,0));
+    margin: 20px 0;
+}
+
+/* 海報最底部頁尾 */
+.poster-footer {
+    text-align: center;
+    padding-top: 50px;
+    margin-top: 50px;
+    border-top: 1px solid #e0e6ed;
+    font-size: 0.9em;
+    color: #95a5a6;
+    line-height: 1.6;
+}
+
+.poster-footer a {
+    color: #e67e22;
+    text-decoration: none;
+}
+
+.poster-footer a:hover {
+    text-decoration: underline;
+}
+
+.ai-hint {
+    font-size: 0.85em;
+    color: #bdc3c7;
+    margin-top: 15px;
+}
+
+.vis-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.vis-container canvas, 
+.vis-container svg {
+    max-width: 100%;
+    height: auto;
+}

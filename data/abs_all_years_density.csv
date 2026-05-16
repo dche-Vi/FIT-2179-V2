@@ -1,0 +1,361 @@
+State,Year,Population,Density
+New South Wales,1981,5234889,6.537
+Victoria,1981,3946917,17.3534
+Queensland,1981,2345208,1.3578
+South Australia,1981,1318769,1.3399
+Western Australia,1981,1300056,0.5145
+Tasmania,1981,427224,6.2459
+Northern Territory,1981,122616,0.091
+Australian Capital Territory,1981,227581,96.5144
+New South Wales,1982,5303580,6.6228
+Victoria,1982,3992870,17.5554
+Queensland,1982,2424586,1.4038
+South Australia,1982,1331108,1.3524
+Western Australia,1982,1338899,0.5298
+Tasmania,1982,429845,6.2842
+Northern Territory,1982,130314,0.0967
+Australian Capital Territory,1982,233045,98.8316
+New South Wales,1983,5352959,6.6844
+Victoria,1983,4035702,17.7437
+Queensland,1983,2482282,1.4372
+South Australia,1983,1345775,1.3673
+Western Australia,1983,1369050,0.5418
+Tasmania,1983,432805,6.3275
+Northern Territory,1983,135916,0.1008
+Australian Capital Territory,1983,238983,101.3499
+New South Wales,1984,5402729,6.7466
+Victoria,1984,4076492,17.9231
+Queensland,1984,2523859,1.4612
+South Australia,1984,1360048,1.3818
+Western Australia,1984,1391237,0.5505
+Tasmania,1984,437760,6.3999
+Northern Territory,1984,142154,0.1055
+Australian Capital Territory,1984,245112,103.9491
+New South Wales,1985,5464512,6.8237
+Victoria,1985,4120068,18.1146
+Queensland,1985,2571218,1.4887
+South Australia,1985,1371197,1.3932
+Western Australia,1985,1418564,0.5614
+Tasmania,1985,442828,6.474
+Northern Territory,1985,148536,0.1102
+Australian Capital Territory,1985,251389,106.6111
+New South Wales,1986,5531526,6.9074
+Victoria,1986,4160856,18.294
+Queensland,1986,2624595,1.5196
+South Australia,1986,1382550,1.4047
+Western Australia,1986,1459019,0.5774
+Tasmania,1986,446473,6.5273
+Northern Territory,1986,154421,0.1146
+Australian Capital Territory,1986,258910,109.8007
+New South Wales,1987,5616736,7.0138
+Victoria,1987,4210111,18.5105
+Queensland,1987,2675107,1.5488
+South Australia,1987,1392764,1.4151
+Western Australia,1987,1496248,0.5921
+Tasmania,1987,449226,6.5675
+Northern Territory,1987,158205,0.1174
+Australian Capital Territory,1987,265477,112.5857
+New South Wales,1988,5707309,7.1269
+Victoria,1988,4262569,18.7412
+Queensland,1988,2739907,1.5863
+South Australia,1988,1404909,1.4274
+Western Australia,1988,1535167,0.6075
+Tasmania,1988,451148,6.5956
+Northern Territory,1988,159026,0.118
+Australian Capital Territory,1988,272129,115.4067
+New South Wales,1989,5776283,7.213
+Victoria,1989,4320164,18.9944
+Queensland,1989,2827637,1.6371
+South Australia,1989,1419029,1.4417
+Western Australia,1989,1578434,0.6246
+Tasmania,1989,455258,6.6557
+Northern Territory,1989,161179,0.1196
+Australian Capital Territory,1989,276432,117.2316
+New South Wales,1990,5834021,7.2851
+Victoria,1990,4378592,19.2513
+Queensland,1990,2899283,1.6786
+South Australia,1990,1432056,1.455
+Western Australia,1990,1613049,0.6383
+Tasmania,1990,462188,6.757
+Northern Territory,1990,163728,0.1215
+Australian Capital Territory,1990,282211,119.6824
+New South Wales,1991,5898731,7.3659
+Victoria,1991,4420373,19.435
+Queensland,1991,2960951,1.7143
+South Australia,1991,1446299,1.4695
+Western Australia,1991,1636067,0.6474
+Tasmania,1991,466802,6.8245
+Northern Territory,1991,165493,0.1228
+Australian Capital Territory,1991,289320,122.6972
+New South Wales,1992,5957822,7.4397
+Victoria,1992,4450217,19.5662
+Queensland,1992,3023198,1.7503
+South Australia,1992,1455442,1.4787
+Western Australia,1992,1658544,0.6563
+Tasmania,1992,469979,6.8709
+Northern Territory,1992,168546,0.1251
+Australian Capital Territory,1992,294887,125.0581
+New South Wales,1993,5995055,7.4862
+Victoria,1993,4462766,19.6214
+Queensland,1993,3096185,1.7926
+South Australia,1993,1458632,1.482
+Western Australia,1993,1678722,0.6643
+Tasmania,1993,471987,6.9003
+Northern Territory,1993,171708,0.1274
+Australian Capital Territory,1993,299753,127.1217
+New South Wales,1994,6044819,7.5484
+Victoria,1994,4472989,19.6663
+Queensland,1994,3166566,1.8334
+South Australia,1994,1463089,1.4865
+Western Australia,1994,1704649,0.6746
+Tasmania,1994,473499,6.9224
+Northern Territory,1994,174908,0.1298
+Australian Capital Territory,1994,302194,128.1569
+New South Wales,1995,6105560,7.6242
+Victoria,1995,4497660,19.7748
+Queensland,1995,3237380,1.8744
+South Australia,1995,1465340,1.4888
+Western Australia,1995,1736066,0.687
+Tasmania,1995,474515,6.9373
+Northern Territory,1995,179602,0.1333
+Australian Capital Territory,1995,305838,129.7023
+New South Wales,1996,6176461,7.7128
+Victoria,1996,4534984,19.9389
+Queensland,1996,3303192,1.9125
+South Australia,1996,1469079,1.4926
+Western Australia,1996,1768206,0.6997
+Tasmania,1996,475605,6.9532
+Northern Territory,1996,184516,0.1369
+Australian Capital Territory,1996,309629,131.31
+New South Wales,1997,6246267,7.7999
+Victoria,1997,4569297,20.0898
+Queensland,1997,3355417,1.9427
+South Australia,1997,1475658,1.4993
+Western Australia,1997,1798341,0.7116
+Tasmania,1997,474908,6.943
+Northern Territory,1997,189755,0.1408
+Australian Capital Territory,1997,310533,131.6934
+New South Wales,1998,6305799,7.8743
+Victoria,1998,4606970,20.2554
+Queensland,1998,3404484,1.9711
+South Australia,1998,1483270,1.507
+Western Australia,1998,1826440,0.7228
+Tasmania,1998,473430,6.9214
+Northern Territory,1998,192905,0.1431
+Australian Capital Territory,1998,311532,132.117
+New South Wales,1999,6375103,7.9608
+Victoria,1999,4652462,20.4554
+Queensland,1999,3453936,1.9997
+South Australia,1999,1490934,1.5148
+Western Australia,1999,1853936,0.7336
+Tasmania,1999,473030,6.9155
+Northern Territory,1999,196012,0.1454
+Australian Capital Territory,1999,314171,133.2362
+New South Wales,2000,6446558,8.05
+Victoria,2000,4704065,20.6823
+Queensland,2000,3509458,2.0319
+South Australia,2000,1497503,1.5215
+Western Australia,2000,1879093,0.7436
+Tasmania,2000,473123,6.9169
+Northern Territory,2000,199149,0.1478
+Australian Capital Territory,2000,317235,134.5356
+New South Wales,2001,6530349,8.1547
+Victoria,2001,4763615,20.9441
+Queensland,2001,3571469,2.0678
+South Australia,2001,1503461,1.5275
+Western Australia,2001,1906274,0.7544
+Tasmania,2001,473668,6.9249
+Northern Territory,2001,201743,0.1497
+Australian Capital Territory,2001,321538,136.3605
+New South Wales,2002,6580807,8.2177
+Victoria,2002,4817774,21.1822
+Queensland,2002,3653123,2.1151
+South Australia,2002,1511567,1.5358
+Western Australia,2002,1928512,0.7632
+Tasmania,2002,474152,6.9319
+Northern Territory,2002,202251,0.1501
+Australian Capital Territory,2002,324627,137.6705
+New South Wales,2003,6620715,8.2675
+Victoria,2003,4873809,21.4286
+Queensland,2003,3743121,2.1672
+South Australia,2003,1520399,1.5447
+Western Australia,2003,1952741,0.7727
+Tasmania,2003,478534,6.996
+Northern Territory,2003,201725,0.1497
+Australian Capital Territory,2003,327357,138.8282
+New South Wales,2004,6650735,8.305
+Victoria,2004,4927149,21.6631
+Queensland,2004,3829970,2.2174
+South Australia,2004,1528189,1.5527
+Western Australia,2004,1979542,0.7834
+Tasmania,2004,483178,7.0639
+Northern Territory,2004,202663,0.1504
+Australian Capital Territory,2004,328940,139.4996
+New South Wales,2005,6693206,8.358
+Victoria,2005,4989246,21.9362
+Queensland,2005,3918494,2.2687
+South Australia,2005,1538804,1.5634
+Western Australia,2005,2011207,0.7959
+Tasmania,2005,486202,7.1081
+Northern Territory,2005,205905,0.1528
+Australian Capital Territory,2005,331399,140.5424
+New South Wales,2006,6742690,8.4198
+Victoria,2006,5061266,22.2528
+Queensland,2006,4007992,2.3205
+South Australia,2006,1552529,1.5774
+Western Australia,2006,2050581,0.8115
+Tasmania,2006,489302,7.1534
+Northern Territory,2006,209057,0.1551
+Australian Capital Territory,2006,335170,142.1416
+New South Wales,2007,6834156,8.534
+Victoria,2007,5153522,22.6584
+Queensland,2007,4111018,2.3802
+South Australia,2007,1570619,1.5958
+Western Australia,2007,2106139,0.8335
+Tasmania,2007,493262,7.2113
+Northern Territory,2007,213748,0.1586
+Australian Capital Territory,2007,342644,145.3113
+New South Wales,2008,6943461,8.6705
+Victoria,2008,5256375,23.1106
+Queensland,2008,4219505,2.443
+South Australia,2008,1588665,1.6141
+Western Australia,2008,2171700,0.8594
+Tasmania,2008,498568,7.2889
+Northern Territory,2008,219874,0.1631
+Australian Capital Territory,2008,348368,147.7388
+New South Wales,2009,7053755,8.8083
+Victoria,2009,5371934,23.6187
+Queensland,2009,4328771,2.5062
+South Australia,2009,1608902,1.6347
+Western Australia,2009,2240250,0.8865
+Tasmania,2009,504353,7.3735
+Northern Territory,2009,226027,0.1677
+Australian Capital Territory,2009,354785,150.4601
+New South Wales,2010,7144292,8.9213
+Victoria,2010,5461101,24.0107
+Queensland,2010,4404744,2.5502
+South Australia,2010,1627322,1.6534
+Western Australia,2010,2290845,0.9065
+Tasmania,2010,508847,7.4392
+Northern Territory,2010,229778,0.1705
+Australian Capital Territory,2010,361766,153.4207
+New South Wales,2011,7218529,9.014
+Victoria,2011,5537817,24.348
+Queensland,2011,4476778,2.5919
+South Australia,2011,1639614,1.6659
+Western Australia,2011,2353409,0.9313
+Tasmania,2011,511483,7.4777
+Northern Territory,2011,231292,0.1716
+Australian Capital Territory,2011,367985,156.0581
+New South Wales,2012,7304244,9.1211
+Victoria,2012,5651091,24.8461
+Queensland,2012,4568687,2.6451
+South Australia,2012,1656725,1.6832
+Western Australia,2012,2425507,0.9598
+Tasmania,2012,511724,7.4812
+Northern Territory,2012,235915,0.175
+Australian Capital Territory,2012,376539,159.6858
+New South Wales,2013,7404032,9.2457
+Victoria,2013,5772669,25.3806
+Queensland,2013,4652824,2.6939
+South Australia,2013,1671488,1.6982
+Western Australia,2013,2486944,0.9841
+Tasmania,2013,512231,7.4886
+Northern Territory,2013,241722,0.1793
+Australian Capital Territory,2013,383257,162.5348
+New South Wales,2014,7508353,9.3759
+Victoria,2014,5894917,25.9181
+Queensland,2014,4719653,2.7325
+South Australia,2014,1686945,1.714
+Western Australia,2014,2517608,0.9963
+Tasmania,2014,513621,7.509
+Northern Territory,2014,242894,0.1802
+Australian Capital Territory,2014,388799,164.8851
+New South Wales,2015,7616168,9.5106
+Victoria,2015,6022322,26.4783
+Queensland,2015,4777692,2.7661
+South Australia,2015,1700668,1.7279
+Western Australia,2015,2540672,1.0054
+Tasmania,2015,515117,7.5308
+Northern Territory,2015,244692,0.1816
+Australian Capital Territory,2015,395813,167.8596
+New South Wales,2016,7732858,9.6563
+Victoria,2016,6173172,27.1415
+Queensland,2016,4845152,2.8052
+South Australia,2016,1712843,1.7403
+Western Australia,2016,2555978,1.0115
+Tasmania,2016,517514,7.5659
+Northern Territory,2016,245678,0.1823
+Australian Capital Territory,2016,403104,170.9517
+New South Wales,2017,7855316,9.8092
+Victoria,2017,6302608,27.7106
+Queensland,2017,4926380,2.8522
+South Australia,2017,1728673,1.7563
+Western Australia,2017,2585720,1.0232
+Tasmania,2017,526762,7.7011
+Northern Territory,2017,247412,0.1836
+Australian Capital Territory,2017,415046,176.0161
+New South Wales,2018,7954476,9.933
+Victoria,2018,6423038,28.2401
+Queensland,2018,5006623,2.8987
+South Australia,2018,1746137,1.7741
+Western Australia,2018,2617792,1.0359
+Tasmania,2018,537291,7.855
+Northern Territory,2018,247095,0.1833
+Australian Capital Territory,2018,426081,180.6959
+New South Wales,2019,8046748,10.0482
+Victoria,2019,6537305,28.7425
+Queensland,2019,5088847,2.9463
+South Australia,2019,1767395,1.7957
+Western Australia,2019,2659625,1.0525
+Tasmania,2019,547841,8.0093
+Northern Territory,2019,246559,0.1829
+Australian Capital Territory,2019,435730,184.788
+New South Wales,2020,8110610,10.128
+Victoria,2020,6615046,29.0843
+Queensland,2020,5165613,2.9907
+South Australia,2020,1790355,1.819
+Western Australia,2020,2712912,1.0736
+Tasmania,2020,557578,8.1516
+Northern Territory,2020,247428,0.1836
+Australian Capital Territory,2020,444903,188.6781
+New South Wales,2021,8097062,10.1111
+Victoria,2021,6547822,28.7887
+Queensland,2021,5215814,3.0198
+South Australia,2021,1802601,1.8315
+Western Australia,2021,2749365,1.088
+Tasmania,2021,567239,8.2928
+Northern Territory,2021,248151,0.1841
+Australian Capital Territory,2021,452508,191.9033
+New South Wales,2022,8182098,10.2173
+Victoria,2022,6615232,29.0851
+Queensland,2022,5310905,3.0749
+South Australia,2022,1824969,1.8542
+Western Australia,2022,2793934,1.1056
+Tasmania,2022,572300,8.3668
+Northern Territory,2022,253100,0.1878
+Australian Capital Territory,2022,461262,195.6158
+New South Wales,2023,8356387,10.4349
+Victoria,2023,6797169,29.885
+Queensland,2023,5450235,3.1555
+South Australia,2023,1857646,1.8874
+Western Australia,2023,2890936,1.144
+Tasmania,2023,573731,8.3878
+Northern Territory,2023,257508,0.1911
+Australian Capital Territory,2023,471340,199.8897
+New South Wales,2024,8492050,10.6043
+Victoria,2024,6950961,30.5612
+Queensland,2024,5571890,3.226
+South Australia,2024,1882164,1.9123
+Western Australia,2024,2978147,1.1785
+Tasmania,2024,574765,8.4029
+Northern Territory,2024,260884,0.1936
+Australian Capital Territory,2024,478430,202.8965
+New South Wales,2025,8592524,10.7298
+Victoria,2025,7073859,31.1015
+Queensland,2025,5669764,3.2826
+South Australia,2025,1902665,1.9331
+Western Australia,2025,3044382,1.2047
+Tasmania,2025,576261,8.4247
+Northern Territory,2025,264556,0.1963
+Australian Capital Territory,2025,484630,205.5259
