@@ -22,7 +22,7 @@ body {
 }
 
 .poster-header h1 {
-    font-family: Georgia, 'Times New Roman', serif; /* 👈 新增這一行 */
+    font-family: Georgia, 'Times New Roman', serif;
     font-size: 3em;
     font-weight: 800;
     color: #1a252f;
