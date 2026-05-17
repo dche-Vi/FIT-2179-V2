@@ -1,0 +1,152 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 820,
+    "height": 500,
+    "padding": {"top": 36},
+    "data": {
+        "url": "data/data_top_countries_2025_treemap.csv",
+        "format": {"type": "csv"}
+    },
+    "transform": [
+        {"calculate": "toNumber(datum.x0)", "as": "x0"},
+        {"calculate": "toNumber(datum.x1)", "as": "x1"},
+        {"calculate": "toNumber(datum.y0)", "as": "y0"},
+        {"calculate": "toNumber(datum.y1)", "as": "y1"},
+        {"calculate": "toNumber(datum.Population)", "as": "Population"},
+        {"calculate": "toNumber(datum.Percentage)", "as": "Percentage"},
+        {"calculate": "(datum.x0 + datum.x1) / 2", "as": "x_center"},
+        {"calculate": "(datum.y0 + datum.y1) / 2", "as": "y_center"}
+    ],
+    "layer": [
+        {
+        "name": "title_text",
+        "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "bottom",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "color": "#333",
+            "x": 0,
+            "y": -10,
+            "text": "The 2025 Migrant Landscape: Top 10 Countries of Birth"
+        },
+        "encoding": {}
+        },
+        {
+        "name": "treemap_rectangles",
+        "mark": {
+            "type": "rect",
+            "stroke": "white",
+            "strokeWidth": 2,
+            "cornerRadius": 4,
+            "cursor": "pointer"
+        },
+        "encoding": {
+            "x": {
+            "field": "x0",
+            "type": "quantitative",
+            "axis": null,
+            "scale": {"domain": [0, 900], "range": [0, 820]}
+            },
+            "x2": {"field": "x1"},
+            "y": {
+            "field": "y0",
+            "type": "quantitative",
+            "axis": null,
+            "scale": {"domain": [0, 500], "range": [0, 500]}
+            },
+            "y2": {"field": "y1"},
+            "color": {
+            "field": "Population",
+            "type": "quantitative",
+            "scale": {"scheme": "tealblues"},
+            "legend": {
+                "title": "Migrant Population",
+                "orient": "bottom",
+                "legendX": 830,
+                "legendY": 0,
+                "direction": "horizontal",
+                "format": "s",
+                "titleFontSize": 11,
+                "labelFontSize": 10,
+                "gradientLength": 120,
+                "gradientThickness": 12
+            }
+            }
+        }
+        },
+        {
+        "name": "treemap_labels",
+        "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "middle",
+            "fontSize": 13,
+            "fontWeight": "bold",
+            "dy": -9
+        },
+        "encoding": {
+            "x": {"field": "x_center", "type": "quantitative"},
+            "y": {"field": "y_center", "type": "quantitative"},
+            "text": {"field": "Country", "type": "nominal"},
+            "color": {
+            "condition": {"test": "datum.Percentage < 1.0", "value": "#2c3e50"},
+            "value": "white"
+            }
+        }
+        },
+        {
+        "name": "treemap_pct_labels",
+        "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "middle",
+            "fontSize": 11,
+            "dy": 9
+        },
+        "encoding": {
+            "x": {"field": "x_center", "type": "quantitative"},
+            "y": {"field": "y_center", "type": "quantitative"},
+            "text": {"field": "Percentage", "type": "quantitative", "format": ".1f"},
+            "color": {
+            "condition": {"test": "datum.Percentage < 1.0", "value": "#546e7a"},
+            "value": "#cfe8f0"
+            }
+        }
+        },
+        {
+        "name": "tooltip_overlay",
+        "mark": {
+            "type": "rect",
+            "opacity": 0,
+            "cursor": "pointer"
+        },
+        "encoding": {
+            "x": {
+            "field": "x0",
+            "type": "quantitative",
+            "scale": {"domain": [0, 900], "range": [0, 820]}
+            },
+            "x2": {"field": "x1"},
+            "y": {
+            "field": "y0",
+            "type": "quantitative",
+            "scale": {"domain": [0, 500], "range": [0, 500]}
+            },
+            "y2": {"field": "y1"},
+            "tooltip": [
+            {"field": "Country",    "type": "nominal",      "title": "Country of Birth"},
+            {"field": "Population", "type": "quantitative", "title": "Estimated Population", "format": ","},
+            {"field": "Percentage", "type": "quantitative", "title": "Share of Total Aus Pop (%)", "format": ".1f"}
+            ]
+        }
+        }
+    ],
+    "resolve": {
+        "scale": {"x": "shared", "y": "shared"}
+    },
+    "config": {
+        "view": {"stroke": "transparent"}
+    }
+}

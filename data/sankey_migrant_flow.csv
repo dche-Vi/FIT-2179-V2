@@ -1,0 +1,60 @@
+source,target,Population
+England,SA,98.77
+India,SA,47.19
+China,SA,27.47
+Vietnam,SA,18.15
+Italy,SA,17.0
+Philippines,SA,16.19
+New Zealand,SA,14.63
+Malaysia,SA,9.51
+New Zealand,Qld,229.92
+England,Qld,201.75
+India,Qld,76.87
+China,Qld,60.35
+Philippines,Qld,54.35
+South Africa,Qld,53.3
+Vietnam,Qld,26.35
+Philippines,NT,7.32
+India,NT,5.86
+England,NT,5.79
+New Zealand,NT,4.84
+Nepal,NT,3.46
+China,NT,1.98
+Vietnam,NT,1.59
+China,NSW,261.33
+England,NSW,240.53
+India,NSW,219.23
+New Zealand,NSW,128.46
+Philippines,NSW,110.85
+Vietnam,NSW,103.71
+Nepal,NSW,69.22
+England,Tas,20.42
+China,Tas,7.44
+India,Tas,6.53
+Nepal,Tas,6.48
+New Zealand,Tas,6.06
+Philippines,Tas,2.59
+South Africa,Tas,2.27
+India,Vic,272.25
+China,Vic,182.14
+England,Vic,181.44
+New Zealand,Vic,108.64
+Vietnam,Vic,99.35
+Philippines,Vic,71.25
+Italy,Vic,66.05
+Malaysia,Vic,65.36
+England,WA,211.73
+New Zealand,WA,85.59
+India,WA,66.55
+South Africa,WA,49.3
+Philippines,WA,40.47
+Malaysia,WA,34.8
+China,WA,31.22
+Vietnam,WA,19.92
+India,ACT,17.51
+England,ACT,13.41
+China,ACT,12.72
+Nepal,ACT,5.69
+New Zealand,ACT,5.46
+Philippines,ACT,5.16
+Vietnam,ACT,4.24

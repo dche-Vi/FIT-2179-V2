@@ -1,0 +1,130 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Overseas Migration to Australia (2015-2024)",
+    "anchor": "start",
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "offset": 30
+  },
+  "width": 800,
+  "height": 500,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "data": {
+    "url": "data/overseas_migration.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {"calculate": "timeParse(datum.Period, '%b-%y')", "as": "Parsed_Date"},
+    {"calculate": "toNumber(datum.Arrivals)", "as": "Arrivals_Num"},
+    {"calculate": "toNumber(datum.Departures)", "as": "Departures_Num"},
+    {"calculate": "toNumber(datum.Net)", "as": "Net_Num"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "Parsed_Date",
+      "type": "temporal",
+      "axis": {
+        "title": "Year",
+        "format": "%Y",
+        "grid": false,
+        "labelFontSize": 13,
+        "titleFontSize": 14,
+        "tickCount": "year"
+      }
+    }
+  },
+  "layer": [
+    {
+      "name": "net_migration_bars",
+      "mark": {"type": "bar", "opacity": 0.85, "size": 15},
+      "encoding": {
+        "y": {
+          "field": "Net_Num",
+          "type": "quantitative",
+          "axis": {
+            "title": "Volume",
+            "grid": true,
+            "gridDash": [4, 4],
+            "labelFontSize": 12,
+            "titleFontSize": 14
+          }
+        },
+        "color": {
+          "datum": "Net Overseas Migration",
+          "scale": {
+            "domain": ["Migrant Arrivals", "Migrant Departures", "Net Overseas Migration"],
+            "range": ["#3498db", "#2c3e50", "#85c1e9"]
+          },
+          "legend": {
+            "title": "Migration Flow",
+            "orient": "top-left",
+            "direction": "horizontal",
+            "titleFontSize": 13,
+            "labelFontSize": 12,
+            "offset": 20
+          }
+        }
+      }
+    },
+    {
+      "name": "arrivals_line",
+      "mark": {"type": "line", "strokeWidth": 3},
+      "encoding": {
+        "y": {"field": "Arrivals_Num", "type": "quantitative"},
+        "color": {"datum": "Migrant Arrivals"}
+      }
+    },
+    {
+      "name": "departures_line",
+      "mark": {"type": "line", "strokeWidth": 3},
+      "encoding": {
+        "y": {"field": "Departures_Num", "type": "quantitative"},
+        "color": {"datum": "Migrant Departures"}
+      }
+    },
+    {
+      "name": "tooltip_sentry",
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 22,
+        "color": "#bdc3c7",
+        "clip": true
+      },
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": ["Parsed_Date"],
+            "nearest": true,
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ],
+      "encoding": {
+        "x": {"field": "Parsed_Date", "type": "temporal"},
+        "opacity": {
+          "condition": {"param": "hover", "empty": false, "value": 0.2},
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Parsed_Date", "type": "temporal", "title": "Quarter", "format": "%b %Y"},
+          {"field": "Arrivals_Num", "type": "quantitative", "title": "Arrivals", "format": ",.1f"},
+          {"field": "Departures_Num", "type": "quantitative", "title": "Departures", "format": ",.1f"},
+          {"field": "Net_Num", "type": "quantitative", "title": "Net Migration", "format": ",.1f"}
+        ]
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {"y": "shared"}
+  },
+  "config": {
+    "view": {"stroke": "transparent"}
+  }
+}

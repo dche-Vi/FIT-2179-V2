@@ -1,0 +1,159 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Migrant Pathways: From Country of Birth to State of Residence",
+        "anchor": "start",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "offset": 20
+    },
+    "width": 800,
+    "height": 500,
+    "data": {
+        "url": "data/sankey_migrant_flow.csv"
+    },
+    "params": [
+        {
+        "name": "Country_Selection",
+        "bind": {
+            "input": "select",
+            "options": [
+            null,
+            "England", "India", "China", "New Zealand", "Philippines",
+            "Vietnam", "South Africa", "Nepal", "Malaysia", "Sri Lanka"
+            ],
+            "labels": [
+            "Show All",
+            "England", "India", "China", "New Zealand", "Philippines",
+            "Vietnam", "South Africa", "Nepal", "Malaysia", "Sri Lanka"
+            ],
+            "name": "Select Country: "
+        }
+        },
+        {
+        "name": "State_Selection",
+        "bind": {
+            "input": "select",
+            "options": [
+            null,
+            "NSW", "Vic", "Qld", "WA", "SA", "ACT", "Tas", "NT"
+            ],
+            "labels": [
+            "Show All",
+            "NSW", "Vic", "Qld", "WA", "SA", "ACT", "Tas", "NT"
+            ],
+            "name": "Select State: "
+        }
+        }
+    ],
+    "transform": [
+        {
+        "calculate": "datum.source === 'England' ? 1 : datum.source === 'India' ? 2 : datum.source === 'China' ? 3 : datum.source === 'New Zealand' ? 4 : datum.source === 'Philippines' ? 5 : datum.source === 'Vietnam' ? 6 : datum.source === 'South Africa' ? 7 : datum.source === 'Nepal' ? 8 : datum.source === 'Malaysia' ? 9 : 10",
+        "as": "Source_Y"
+        },
+        {
+        "calculate": "datum.target === 'NSW' ? 1 : datum.target === 'Vic' ? 2.2 : datum.target === 'Qld' ? 3.5 : datum.target === 'WA' ? 4.8 : datum.target === 'SA' ? 6.1 : datum.target === 'ACT' ? 7.4 : datum.target === 'Tas' ? 8.7 : 10",
+        "as": "Target_Y"
+        }
+    ],
+    "layer": [
+        {
+        "name": "unselected_background_lines",
+        "transform": [
+            {"filter": "!((Country_Selection == null || datum.source === Country_Selection) && (State_Selection == null || datum.target === State_Selection))"}
+        ],
+        "mark": {
+            "type": "rule",
+            "strokeCap": "round",
+            "opacity": 0.02
+        },
+        "encoding": {
+            "x": {"datum": 1, "type": "quantitative", "scale": {"domain": [0.7, 2.3]}, "axis": null},
+            "x2": {"datum": 2},
+            "y": {"field": "Source_Y", "type": "quantitative", "scale": {"reverse": true}, "axis": null},
+            "y2": {"field": "Target_Y"},
+            "size": {"field": "Population", "type": "quantitative", "scale": {"range": [2, 35]}, "legend": null},
+            "color": {"field": "source", "type": "nominal", "scale": {"scheme": "category20"}, "legend": null}
+        }
+        },
+        {
+        "name": "selected_foreground_lines",
+        "transform": [
+            {"filter": "(Country_Selection == null || datum.source === Country_Selection) && (State_Selection == null || datum.target === State_Selection)"}
+        ],
+        "mark": {
+            "type": "rule",
+            "strokeCap": "round",
+            "opacity": 0.45
+        },
+        "encoding": {
+            "x": {"datum": 1, "type": "quantitative", "scale": {"domain": [0.7, 2.3]}, "axis": null},
+            "x2": {"datum": 2},
+            "y": {"field": "Source_Y", "type": "quantitative", "scale": {"reverse": true}, "axis": null},
+            "y2": {"field": "Target_Y"},
+            "size": {"field": "Population", "type": "quantitative", "scale": {"range": [2, 35]}, "legend": null},
+            "color": {"field": "source", "type": "nominal"},
+            "tooltip": [
+            {"field": "source", "type": "nominal", "title": "From (Country)"},
+            {"field": "target", "type": "nominal", "title": "To (State)"},
+            {"field": "Population", "type": "quantitative", "title": "Population ('000)", "format": ",.1f"}
+            ]
+        }
+        },
+        {
+        "name": "left_text_countries",
+        "transform": [
+            {"aggregate": [{"op": "min", "field": "Source_Y", "as": "Y_Pos"}], "groupby": ["source"]}
+        ],
+        "mark": {
+            "type": "text",
+            "align": "right",
+            "dx": -15,
+            "fontSize": 13,
+            "fontWeight": "bold"
+        },
+        "encoding": {
+            "x": {"datum": 1, "type": "quantitative"},
+            "y": {"field": "Y_Pos", "type": "quantitative"},
+            "text": {"field": "source", "type": "nominal"},
+            "color": {"field": "source", "type": "nominal"},
+            "opacity": {
+            "condition": {
+                "test": "Country_Selection == null || datum.source == Country_Selection",
+                "value": 1
+            },
+            "value": 0.2
+            }
+        }
+        },
+        {
+        "name": "right_text_states",
+        "transform": [
+            {"aggregate": [{"op": "min", "field": "Target_Y", "as": "Y_Pos"}], "groupby": ["target"]}
+        ],
+        "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 15,
+            "fontSize": 13,
+            "fontWeight": "bold",
+            "color": "#2c3e50"
+        },
+        "encoding": {
+            "x": {"datum": 2, "type": "quantitative"},
+            "y": {"field": "Y_Pos", "type": "quantitative"},
+            "text": {"field": "target", "type": "nominal"},
+            "opacity": {
+            "condition": {
+                "test": "State_Selection == null || datum.target == State_Selection",
+                "value": 1
+            },
+            "value": 0.2
+            }
+        }
+        }
+    ],
+    "config": {
+        "view": {"stroke": "transparent"}
+    }
+}

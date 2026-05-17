@@ -1,7 +1,6 @@
-/* 全局海報背景 */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f4f6f8; /* 稍微深一點的底色，用來突顯白色的海報主體 */
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: #c7d1db;
     margin: 0;
     padding: 40px 0;
     color: #2c3e50;
@@ -23,6 +22,7 @@ body {
 }
 
 .poster-header h1 {
+    font-family: Georgia, 'Times New Roman', serif; /* 👈 新增這一行 */
     font-size: 3em;
     font-weight: 800;
     color: #1a252f;
@@ -41,7 +41,7 @@ body {
 .header-line {
     width: 100px;
     height: 4px;
-    background-color: #e67e22; /* 橘色點綴線，建立視覺焦點 */
+    background-color: #e67e22;
     margin: 0 auto 25px auto;
 }
 
@@ -90,21 +90,19 @@ body {
     margin-bottom: 10px;
 }
 
-/* 圖表下方的圖說（Caption） */
 .chart-caption {
     font-size: 0.9em;
     color: #7f8c8d;
     margin-top: 5px;
 }
 
-/* 海報層與層之間的微弱分割線 */
 /*.poster-divider {
     height: 1px;
     background: linear-gradient(to right, rgba(0,0,0,0), rgba(224, 230, 237, 1), rgba(0,0,0,0));
     margin: 20px 0;
 }
+*/
 
-/* 海報最底部頁尾 */
 .poster-footer {
     text-align: center;
     padding-top: 50px;
@@ -141,3 +139,37 @@ body {
     max-width: 100%;
     height: auto;
 }
+
+.vega-bindings {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 30px !important;
+    margin-top: 20px !important;
+    padding: 10px 0;
+}
+
+.vega-bind {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-bottom: 0 !important;
+}
+
+.vega-bindings select {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 13px;
+    transition: border-color 0.2s;
+    font-family: inherit;
+}
+
+.vega-bindings select:hover {
+    border-color: #3498db;
+}
+

@@ -61,7 +61,7 @@
       "type": "quantitative",
       "scale": {
         "type": "log",
-        "scheme": "oranges",
+        "scheme": "blues",
         "domain": [0.1, 200]
       },
       "title": null,

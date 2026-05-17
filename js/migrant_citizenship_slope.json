@@ -1,0 +1,121 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Civic Identity: Citizenship Transition by Visa Stream",
+        "subtitle": "Proportion (%) of permanent migrants acquiring Australian citizenship over time, grouped by visa type (2021)",
+        "anchor": "start",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "subtitleFontSize": 12,
+        "subtitleColor": "#7f8c8d",
+        "offset": 25
+    },
+    "data": {
+        "url": "data/migrant_citizenship_detailed.csv",
+        "format": {"type": "csv"}
+    },
+    "facet": {
+        "column": {
+        "field": "Visa_Stream",
+        "type": "nominal",
+        "title": null,
+        "header": {
+            "labelFontSize": 13,
+            "labelFontWeight": "bold",
+            "labelColor": "#2c3e50",
+            "labelPadding": 10
+        },
+        "sort": ["Skilled migrants", "Family migrants", "Humanitarian migrants"]
+        }
+    },
+    "spec": {
+        "width": 240,
+        "height": 350,
+        "encoding": {
+        "x": {
+            "field": "Time_In_Australia",
+            "type": "nominal",
+            "sort": ["Within 5 years", "5-10 years", "More than 10 years"],
+            "axis": {
+            "title": null,
+            "grid": true,
+            "gridColor": "#eaeded",
+            "labelFontSize": 11,
+            "labelAngle": -15
+            }
+        },
+        "y": {
+            "field": "Proportion",
+            "type": "quantitative",
+            "axis": {
+            "title": "Proportion of Cohort (%)",
+            "format": ".0f",
+            "grid": true,
+            "gridDash": [3, 3],
+            "labelFontSize": 11,
+            "titleFontSize": 12
+            },
+            "scale": {"domain": [0, 100]}
+        },
+        "color": {
+            "field": "Status",
+            "type": "nominal",
+            "scale": {
+            "domain": ["Australian Citizen", "Non-Citizen"],
+            "range": ["#3498db", "#95a5a6"]
+            },
+            "legend": {
+            "title": "Citizenship Status",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "titleFontSize": 12,
+            "labelFontSize": 11,
+            "offset": 25
+            }
+        }
+        },
+        "layer": [
+        {
+            "name": "slope_lines",
+            "mark": {
+            "type": "line",
+            "strokeWidth": 3.5,
+            "strokeCap": "round"
+            }
+        },
+        {
+            "name": "slope_vertex_dots",
+            "mark": {
+            "type": "circle",
+            "size": 80,
+            "opacity": 1
+            },
+            "encoding": {
+            "tooltip": [
+                {"field": "Visa_Stream", "type": "nominal", "title": "Visa Type"},
+                {"field": "Time_In_Australia", "type": "nominal", "title": "Residence Period"},
+                {"field": "Status", "type": "nominal", "title": "Status"},
+                {"field": "Proportion", "type": "quantitative", "title": "Proportion (%)", "format": ".1f"}
+            ]
+            }
+        },
+        {
+            "name": "slope_value_labels",
+            "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "bottom",
+            "dy": -10,
+            "fontSize": 11,
+            "fontWeight": "bold"
+            },
+            "encoding": {
+            "text": {"field": "Proportion", "type": "quantitative", "format": ".1f"}
+            }
+        }
+        ]
+    },
+    "config": {
+        "view": {"stroke": "transparent"}
+    }
+}

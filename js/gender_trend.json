@@ -13,15 +13,6 @@
         },
         "width": "container",
         "height": 250,
-        "mark": {
-            "type": "line",
-            "line": true,
-            "opacity": 0.75,
-            "point": {
-                "filled": true,
-                "size": 35
-            }
-        },
         "encoding": {
             "x": {
             "field": "Year",
@@ -30,7 +21,8 @@
             "scale": {
                 "domain": {
                 "param": "time_brush"
-                }
+                },
+                "nice": false
             },
             "axis": {
                 "format": "d",
@@ -41,6 +33,7 @@
             "field": "Population",
             "type": "quantitative",
             "title": "Population Count",
+            "stack": "zero",
             "axis": {
                 "format": "~s",
                 "grid": true
@@ -51,16 +44,29 @@
             "type": "nominal",
             "scale": {
                 "domain": ["Male", "Female"],
-                "range": ["#2980b9", "#e74c3c"]
+                "range": ["#2980b9", "#e67e22"]
             },
             "title": "Sex"
+            }
+        },
+        "layer": [
+            {
+            "mark": {
+                "type": "area",
+                "line": true,
+                "opacity": 0.75,
+                "tooltip": null  
+            }
             },
-            "tooltip": [
-            {"field": "Year", "type": "quantitative", "title": "Year"},
-            {"field": "Sex", "type": "nominal", "title": "Sex"},
-            {"field": "Population", "type": "quantitative", "format": ",", "title": "Population"}
-            ]
-        }
+            {
+            "mark": {
+                "type": "point",
+                "filled": true,
+                "size": 90
+            }
+            
+            }
+        ]
         },
         {
         "title": {
@@ -87,14 +93,16 @@
         "mark": {
             "type": "area",
             "color": "#7f8c8d",
-            "opacity": 0.35
+            "opacity": 0.35,
+            "tooltip": null
         },
         "encoding": {
             "x": {
             "field": "Year",
             "type": "quantitative",
             "scale": {
-                "domain": [1981, 2025]
+                "domain": [1981, 2025],
+                "nice": false
             },
             "axis": {
                 "format": "d"

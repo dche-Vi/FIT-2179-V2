@@ -1,0 +1,101 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Linguistic Diversity & Barriers: Top 5 Non-English Languages",
+        "subtitle": "Comparing speaker volume and internal English proficiency structures (2021)",
+        "anchor": "start",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "subtitleFontSize": 12,
+        "subtitleColor": "#7f8c8d",
+        "offset": 25
+    },
+    "width": 550,
+    "height": 450,
+    "data": {
+        "url": "data/data_top_languages_2021.csv",
+        "format": {"type": "csv"}
+    },
+    "transform": [
+        {
+        "calculate": "100 - datum.Low_Proficiency_Pct",
+        "as": "High_Proficiency_Pct"
+        },
+        {
+        "fold": ["High_Proficiency_Pct", "Low_Proficiency_Pct"],
+        "as": ["Proficiency_Type", "Percentage"]
+        },
+        {
+        "calculate": "datum.Proficiency_Type === 'High_Proficiency_Pct' ? 'High Proficiency' : 'Low Proficiency'",
+        "as": "Proficiency_Status"
+        },
+        {
+        "calculate": "datum.Percentage * datum.Count / 100",
+        "as": "Speaker_Count"
+        },
+        {
+        "calculate": "format(datum.Percentage, '.1f') + '%'",
+        "as": "Percentage_Label"
+        }
+    ],
+    "mark": {
+        "type": "bar", 
+        "stroke": "white", 
+        "strokeWidth": 1.5, 
+        "width": 65
+    },
+    "encoding": {
+        "x": {
+        "field": "Language",
+        "type": "nominal",
+        "sort": {"field": "Count", "order": "descending"},
+        "axis": {
+            "labelFontSize": 12,
+            "labelFontWeight": "bold",
+            "labelAngle": 0,
+            "title": null
+        }
+        },
+        "y": {
+        "field": "Speaker_Count",
+        "type": "quantitative",
+        "axis": {
+            "title": "Number of Speakers",
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "format": "s"
+        }
+        },
+        "color": {
+        "field": "Proficiency_Status",
+        "type": "nominal",
+        "scale": {
+            "domain": ["High Proficiency", "Low Proficiency"],
+            "range": ["#3498db", "#e67e22"]
+        },
+        "legend": {
+            "title": "English Proficiency",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "titleFontSize": 12,
+            "labelFontSize": 11,
+            "offset": 25
+        }
+        },
+        "order": {
+        "field": "Percentage",
+        "type": "quantitative",
+        "sort": "descending"
+        },
+        "tooltip": [
+        {"field": "Language", "type": "nominal", "title": "Language"},
+        {"field": "Proficiency_Status", "type": "nominal", "title": "English Proficiency"},
+        {"field": "Percentage", "type": "quantitative", "title": "Share of Community (%)", "format": ".1f"},
+        {"field": "Speaker_Count", "type": "quantitative", "title": "Speakers in Segment", "format": ",.0f"},
+        {"field": "Count", "type": "quantitative", "title": "Total Language Speakers", "format": ","}
+        ]
+    },
+    "config": {
+        "view": {"stroke": "transparent"}
+    }
+}

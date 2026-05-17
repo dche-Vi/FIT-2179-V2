@@ -1,0 +1,124 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Linguistic Integration: Spoken English Proficiency Over Time",
+        "subtitle": "Showing English mastery by visa stream and length of stay (2021)",
+        "anchor": "start",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "subtitleFontSize": 12,
+        "subtitleColor": "#7f8c8d",
+        "offset": 20
+    },
+    "width": 400,
+    "height": 400,
+    "data": {
+        "url": "data/migrant_english_skilled.csv",
+        "format": {"type": "csv"}
+    },
+    "params": [
+        {
+        "name": "Visa_Selection",
+        "value": "Skilled migrants",
+        "bind": {
+            "input": "select",
+            "options": ["Skilled migrants", "Family migrants", "Humanitarian migrants"],
+            "labels": ["Skilled Migrants", "Family Migrants", "Humanitarian Migrants"],
+            "name": "Select Visa Type: "
+        }
+        },
+        {
+        "name": "Time_Selection",
+        "value": "Within 5 years",
+        "bind": {
+            "input": "select",
+            "options": ["Within 5 years", "5-10 years", "More than 10 years"],
+            "labels": ["Within 5 Years", "5-10 Years", "More than 10 Years"],
+            "name": "Length of Stay: "
+        }
+        }
+    ],
+    "transform": [
+        {
+        "filter": "datum.Visa_Stream === Visa_Selection && datum.Time_In_Australia === Time_Selection"
+        },
+        {
+        "calculate": "datum.Proportion + '%'",
+        "as": "Percent_Label"
+        }
+    ],
+    "layer": [
+        {
+        "name": "donut_arcs",
+        "mark": {
+            "type": "arc",
+            "innerRadius": 90,
+            "outerRadius": 140,
+            "stroke": "white",
+            "strokeWidth": 2
+        },
+        "encoding": {
+            "theta": {"field": "Proportion", "type": "quantitative"},
+            "color": {
+            "field": "Proficiency",
+            "type": "nominal",
+            "scale": {
+                "domain": ["Proficient", "Not Proficient"],
+                "range": ["#3498db", "#e67e22"]
+            },
+            "legend": {
+                "title": "English Proficiency",
+                "orient": "bottom",
+                "titleFontSize": 12,
+                "labelFontSize": 11
+            }
+            },
+            "tooltip": [
+            {"field": "Visa_Stream", "type": "nominal", "title": "Visa Type"},
+            {"field": "Time_In_Australia", "type": "nominal", "title": "Length of Stay"},
+            {"field": "Proficiency", "type": "nominal", "title": "Status"},
+            {"field": "Proportion", "type": "quantitative", "title": "Share (%)", "format": ".1f"}
+            ]
+        }
+        },
+        {
+        "name": "center_stat_value",
+        "transform": [
+            {"filter": "datum.Proficiency === 'Proficient'"}
+        ],
+        "mark": {
+            "type": "text",
+            "fontSize": 36,
+            "fontWeight": "bold",
+            "color": "#3498db",
+            "align": "center",
+            "baseline": "middle",
+            "dy": -10
+        },
+        "encoding": {
+            "text": {"field": "Percent_Label", "type": "nominal"}
+        }
+        },
+        {
+        "name": "center_stat_subtext",
+        "transform": [
+            {"filter": "datum.Proficiency === 'Proficient'"}
+        ],
+        "mark": {
+            "type": "text",
+            "fontSize": 14,
+            "fontWeight": "bold",
+            "color": "#7f8c8d",
+            "align": "center",
+            "baseline": "middle",
+            "dy": 25
+        },
+        "encoding": {
+            "text": {"datum": "Proficient"}
+        }
+        }
+    ],
+    "config": {
+        "view": {"stroke": "transparent"}
+    }
+}

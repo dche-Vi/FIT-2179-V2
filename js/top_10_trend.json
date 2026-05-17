@@ -1,0 +1,92 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Migration Growth: Top 10 Countries of Birth (2014 vs 2019 vs 2024)",
+        "anchor": "start",
+        "fontSize": 15,
+        "fontWeight": "bold",
+        "offset": 20
+    },
+    "width": 500,
+    "height": 400,
+    "data": {
+        "url": "data/top_10_countries_trend.csv",
+        "format": {
+        "type": "csv"
+        }
+    },
+    "transform": [
+        {"fold": ["2014", "2019", "2024"], "as": ["Year", "Population_Raw"]},
+        {"calculate": "toNumber(replace(datum.Population_Raw, ',', '')) * 1000", "as": "Population"}
+    ],
+    "params": [
+        {
+        "name": "country_select",
+        "select": {
+            "type": "point", 
+            "fields": ["Country"]
+        }
+        }
+    ],
+    "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3
+    },
+    "encoding": {
+        "y": {
+        "field": "Country",
+        "type": "nominal",
+        "sort": {"field": "Population", "op": "sum", "order": "descending"},
+        "axis": {
+            "title": null,
+            "labelFontSize": 12,
+            "labelFontWeight": "bold"
+        }
+        },
+        "yOffset": {
+        "field": "Year",
+        "type": "nominal"
+        },
+        "x": {
+        "field": "Population",
+        "type": "quantitative",
+        "title": "Total Population",
+        "axis": {
+            "grid": true,
+            "format": "s"
+        }
+        },
+        "color": {
+        "field": "Year",
+        "type": "nominal",
+        "scale": {
+            "domain": ["2014", "2019", "2024"],
+            "range": ["#a9cce3", "#3498db", "#154360"]
+        },
+        "title": "Year",
+        "legend": {
+            "orient": "right",
+            "verticalAlign": "middle",
+            "direction": "vertical",
+            "offset": 25,
+            "titleFontSize": 12,
+            "labelFontSize": 11
+        }
+        },
+        "opacity": {
+        "condition": {
+            "param": "country_select", 
+            "value": 1
+        },
+        "value": 0.2
+        },
+        "tooltip": [
+        {"field": "Country", "type": "nominal", "title": "Country"},
+        {"field": "Year", "type": "nominal", "title": "Year"},
+        {"field": "Population", "type": "quantitative", "title": "Population", "format": ",.0f"}
+        ]
+    },
+    "config": {
+        "view": {"stroke": "transparent"}
+    }
+}

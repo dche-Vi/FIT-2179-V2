@@ -1,0 +1,134 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Australia's Population Structure by Age, Sex, and Birthplace",
+        "anchor": "start",
+        "fontSize": 14,
+        "fontWeight": "bold"
+    },
+    "data": {
+        "url": "data/age_birthplace.csv",
+        "format": {"type": "csv"}
+    },
+    "spacing": 15,
+    "transform": [
+        {"calculate": "toNumber(datum['Aust-born males (%)'])", "as": "Aust_males"},
+        {"calculate": "toNumber(datum['OS-born males (%)'])", "as": "OS_males"},
+        {"calculate": "toNumber(datum['Aust-born females (%)'])", "as": "Aust_females"},
+        {"calculate": "toNumber(datum['OS-born females (%)'])", "as": "OS_females"},
+        {"calculate": "parseInt(datum['Age group (years)'])", "as": "Age_Order"}
+    ],
+    "hconcat": [
+        {
+        "title": "Males",
+        "width": 240,
+        "height": 320,
+        "transform": [
+            {"fold": ["Aust_males", "OS_males"], "as": ["Birthplace_Raw", "Percentage"]},
+            {"calculate": "datum.Birthplace_Raw == 'Aust_males' ? 'Australian-born' : 'Overseas-born'", "as": "Birthplace"}
+        ],
+        "mark": {"type": "bar", "size": 13},
+        "encoding": {
+            "y": {
+            "field": "Age group (years)",
+            "type": "nominal",
+            "axis": null,
+            "sort": {"field": "Age_Order", "order": "descending"}
+            },
+            "x": {
+            "field": "Percentage",
+            "type": "quantitative",
+            "title": "Proportion (%)",
+            "scale": {"domain": [0, 4]},
+            "sort": "descending",
+            "axis": {"grid": true}
+            },
+            "color": {
+            "field": "Birthplace",
+            "type": "nominal",
+            "scale": {
+                "domain": ["Australian-born", "Overseas-born"],
+                "range": ["#3498db", "#a9cce3"]
+            },
+            "legend": null
+            },
+            "tooltip": [
+            {"field": "Age group (years)", "type": "nominal", "title": "Age Group"},
+            {"field": "Birthplace", "type": "nominal", "title": "Birthplace"},
+            {"field": "Percentage", "type": "quantitative", "title": "Proportion (%)"}
+            ]
+        }
+        },
+        {
+        "width": 70,
+        "height": 320,
+        "view": {"stroke": null},
+        "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "middle",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#2c3e50"
+        },
+        "encoding": {
+            "y": {
+            "field": "Age group (years)",
+            "type": "nominal",
+            "axis": null,
+            "sort": {"field": "Age_Order", "order": "descending"}
+            },
+            "text": {
+            "field": "Age group (years)",
+            "type": "nominal"
+            }
+        }
+        },
+        {
+        "title": "Females",
+        "width": 240,
+        "height": 320,
+        "transform": [
+            {"fold": ["Aust_females", "OS_females"], "as": ["Birthplace_Raw", "Percentage"]},
+            {"calculate": "datum.Birthplace_Raw == 'Aust_females' ? 'Australian-born' : 'Overseas-born'", "as": "Birthplace"}
+        ],
+        "mark": {"type": "bar", "size": 13},
+        "encoding": {
+            "y": {
+            "field": "Age group (years)",
+            "type": "nominal",
+            "axis": null,
+            "sort": {"field": "Age_Order", "order": "descending"}
+            },
+            "x": {
+            "field": "Percentage",
+            "type": "quantitative",
+            "title": "Proportion (%)",
+            "scale": {"domain": [0, 4]},
+            "axis": {"grid": true}
+            },
+            "color": {
+            "field": "Birthplace",
+            "type": "nominal",
+            "scale": {
+                "domain": ["Australian-born", "Overseas-born"],
+                "range": ["#2980b9", "#ff7f50"]
+            },
+            "title": "Birthplace",
+            "legend": {
+                "orient": "right",
+                "offset": 25,
+                "title": "Birthplace",
+                "labelFontSize": 11,
+                "titleFontSize": 12
+            }
+            },
+            "tooltip": [
+            {"field": "Age group (years)", "type": "nominal", "title": "Age Group"},
+            {"field": "Birthplace", "type": "nominal", "title": "Birthplace"},
+            {"field": "Percentage", "type": "quantitative", "title": "Proportion (%)"}
+            ]
+        }
+        }
+    ]
+}
