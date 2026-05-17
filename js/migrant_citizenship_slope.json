@@ -62,7 +62,7 @@
             "type": "nominal",
             "scale": {
             "domain": ["Australian Citizen", "Non-Citizen"],
-            "range": ["#3498db", "#95a5a6"]
+            "range": ["#3498db", "#e67e22"]
             },
             "legend": {
             "title": "Citizenship Status",

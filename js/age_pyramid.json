@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-        "text": "Australia's Population Structure by Age, Sex, and Birthplace",
+        "text": "Australia's Population Structure by Age, Sex, and Birthplace (2025)",
         "anchor": "start",
         "fontSize": 14,
         "fontWeight": "bold"
@@ -48,9 +48,15 @@
             "type": "nominal",
             "scale": {
                 "domain": ["Australian-born", "Overseas-born"],
-                "range": ["#3498db", "#a9cce3"]
+                "range": ["#2b5c8f", "#90b1db"]
             },
-            "legend": null
+            "legend": {
+                "orient": "left",
+                "offset": 25,
+                "title": "Male Birthplace",
+                "labelFontSize": 11,
+                "titleFontSize": 12
+            }
             },
             "tooltip": [
             {"field": "Age group (years)", "type": "nominal", "title": "Age Group"},
@@ -112,13 +118,12 @@
             "type": "nominal",
             "scale": {
                 "domain": ["Australian-born", "Overseas-born"],
-                "range": ["#2980b9", "#ff7f50"]
+                "range": ["#b33951", "#e197a6"]
             },
-            "title": "Birthplace",
             "legend": {
                 "orient": "right",
                 "offset": 25,
-                "title": "Birthplace",
+                "title": "Female Birthplace",
                 "labelFontSize": 11,
                 "titleFontSize": 12
             }
@@ -130,5 +135,10 @@
             ]
         }
         }
-    ]
+    ],
+    "resolve": {
+        "scale": {
+        "color": "independent"
+        }
+    }
 }

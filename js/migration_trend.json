@@ -57,7 +57,7 @@
           "datum": "Net Overseas Migration",
           "scale": {
             "domain": ["Migrant Arrivals", "Migrant Departures", "Net Overseas Migration"],
-            "range": ["#3498db", "#2c3e50", "#85c1e9"]
+            "range": ["#3498db", "#2c3e50", "#e67e22"]
           },
           "legend": {
             "title": "Migration Flow",

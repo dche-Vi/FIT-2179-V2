@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 820,
     "height": 500,
-    "padding": {"top": 36},
+    "padding": {"top": 20},
     "data": {
         "url": "data/data_top_countries_2025_treemap.csv",
         "format": {"type": "csv"}
